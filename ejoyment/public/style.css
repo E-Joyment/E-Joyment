@@ -4,3 +4,11 @@
   box-sizing: border-box;
   font-family: 'Inter',sans-serif;
 }
+
+html{
+  font-size: 10px;
+}
+
+.container{
+  width: 1200px;
+}
