@@ -1,12 +1,10 @@
-
+import Nav from './components/nav/Nav.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>
-    </div>
+    <section>
+      <Nav/>
+    </section>
   );
 }
 
