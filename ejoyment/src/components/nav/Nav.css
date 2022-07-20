@@ -1,0 +1,93 @@
+.Navbar{
+  height: 96px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  font-size: 15px;
+  border-bottom: 0.1rem solid;
+}
+.menusContainer{
+  flex: 6;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: medium;
+}
+.menusContainer div{
+  margin-right: 20px;
+  cursor:pointer;
+}
+.menusContainer div:hover{
+  color:#D6336C;
+}
+.logo{
+  margin-left: 20px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  background-color: #D6336C;
+  position: relative;
+}
+.logoA{
+  color: white;
+  font-family: "Kavoon";
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  top:3px;
+  left:10px;
+  margin:auto;
+  font-style: italic;
+}
+.iconsContainer{
+  flex: 6;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.iconsContainer div{
+  margin-right: 50px;
+  cursor:pointer;
+}
+.iconsContainer div:hover{
+  color: #D6336C;
+}
+
+
+
+.menusCat{
+  overflow: hidden;
+}
+
+#menubar:hover > #menulist {
+  display: block;
+}
+
+.menusName{
+  cursor: pointer;
+}
+
+.menusDropdown {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 2px 2px 0px #44566C;
+  background-color: white;
+}
+
+.menusList{
+  float: none;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #44566C;
+  font-size: 12px;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+}
