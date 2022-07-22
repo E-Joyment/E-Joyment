@@ -1,0 +1,230 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+}
+.container >div{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.overviewTop{
+  display:flex;
+  flex-direction: row;
+}
+
+.thumbnailsContainer{
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 600px;
+  width: 100px;
+}
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background-color: white;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgb(85, 85, 85);
+}
+.thumb{
+  height: 64px;
+  width: 64px;
+  object-fit: cover;
+}
+
+.mainImgContainer{
+  margin-right:  15px;
+}
+
+.mainImg{
+  height: 600px;
+  width: 600px;
+  object-fit: cover;
+}
+
+.productContainer{
+  display: flex;
+  flex-direction: column;
+  position:relative;
+}
+
+.productCat{
+  margin-top: 20px;
+  background-color: #D6336C;
+  height: 22px;
+  width: 79px;
+  border-radius: 11px;
+  color: white;
+  text-align: center;
+  justify-items: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  align-items: center;
+}
+
+.productName{
+  height: 40px;
+  width: 338px;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.productRating{
+  display: flex;
+  flex-direction: row;
+}
+
+.productRatingNum{
+  margin-left: 10px;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.styleContainer{
+  display: flex;
+  flex-direction: column;
+  height: 168px;
+  width: 416px;
+}
+
+
+.styleTitleContainer{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-weight: medium;
+
+}
+
+.styleTitleContainer >div{
+  margin-right: 10px;
+}
+
+.styleName{
+  font-weight: 500;
+}
+.styleThumbsContainer{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.styleThumbsContainer .stylethumb{
+  height: 56px;
+  width: 56px;
+  margin: 0px 5px 0px 5px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.stylethumb{
+  cursor: pointer;
+}
+.stylecheck{
+  border: #D6336C solid;
+  border-radius: 50%;
+  height: 56px;
+  width: 56px;
+  object-fit: cover;
+}
+
+.priceContainer{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.productOriginPrice{
+  text-decoration: line-through;
+}
+
+.productSalePrice{
+  color: #D6336C;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.sizeContainer{
+  margin-bottom: 20px;
+}
+
+.addBagButton{
+  background-color: #D6336C;
+  color: white;
+  height: 56px;
+  width: 344px;
+  font-size: 20px;
+  border: none;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+
+.material-symbols-outlined{
+  margin-left: 10px;
+}
+
+.addBag{
+  display: flex;
+  flex-direction: row;
+}
+
+#addBagid{
+  color: white;
+}
+
+.addFav{
+  height: 56px;
+  width: 56px;
+  border-radius: 10%;
+  margin-left: 20px;
+  border: black solid 1px;
+  justify-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.addFav >span{
+  height: 30px;
+  width: 30px;
+  margin: 0px;
+  padding-top: 15px;
+}
+
+.overviewBottom{
+  display: flex;
+  flex-direction: column;
+}
+
+.overviewBottom{
+  display: flex;
+  flex-direction: column;
+  height: 198px;
+  width: 1057px;
+  align-self: center;
+  margin-top: 60px;
+}
+
+.overviewSlogan{
+  height: 32px;
+  width: 328;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: "Merriwea";
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.overviewDesc{
+  margin-top: 20px;
+  height: 118px;
+  width: 1057px;
+  font-size: 16px;
+  line-height: 28px;
+  font-family: "Inter";
+}

@@ -36,10 +36,10 @@ export default function NavBar() {
           </div>
         </div>
         <div className="iconsContainer">
-          <div><span class="material-symbols-outlined">search</span>Search</div>
-          <div><span class="material-symbols-outlined">favorite</span>Wishlist</div>
-          <div><span class="material-symbols-outlined">local_mall</span>Bag</div>
-          <div><span class="material-symbols-outlined">account_circle</span>Account</div>
+          <div className="iconInd"><span class="material-symbols-outlined" id="topRightIcon">search</span>Search</div>
+          <div className="iconInd"><span class="material-symbols-outlined" id="topRightIcon">favorite</span>Wishlist</div>
+          <div className="iconInd"><span class="material-symbols-outlined" id="topRightIcon">local_mall</span>Bag</div>
+          <div className="iconInd"><span class="material-symbols-outlined" id="topRightIcon">account_circle</span>Account</div>
         </div>
       </div>
     </section>

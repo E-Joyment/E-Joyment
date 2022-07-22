@@ -59,7 +59,16 @@
   color: #D6336C;
 }
 
+.iconInd{
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+  font-size: 12px;
+}
 
+#topRightIcon{
+  margin: 0px;
+}
 
 .menusCat{
   overflow: hidden;
