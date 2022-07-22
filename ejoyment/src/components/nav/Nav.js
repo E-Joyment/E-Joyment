@@ -10,7 +10,7 @@ export default function NavBar() {
       navBar[product['category']] = [{'id': product['id'], 'name': product['name']}];
     }
   })
-  console.log("navBar",navBar);
+  // console.log("navBar",navBar);
   return (
     <section>
       <div className="Navbar">
