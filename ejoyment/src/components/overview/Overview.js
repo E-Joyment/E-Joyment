@@ -1,18 +1,34 @@
 import "./overview.css";
+import Zoom from 'react-img-zoom'
 import {overviewData} from "../../assets/overviewdata.js";
 import {reviewData} from "../../assets/reviewdata.js";
-import {useState} from "react";
+import {useState,useRef} from "react";
 import Select from "react-select";
 import StarRating from 'react-star-ratings';
+
 export default function Overview() {
   const [curStyle, setCurStyle] = useState(0);
   const [size, setSize] = useState();
+  const [startImg, setStartImg] = useState(0);
   const styles = overviewData.styles;
+  const [main, setMain] = useState(0);
+  const nImg = styles[curStyle].photos.length;
   const stylethumbs = [];
+  const nThumbs = 7;
   styles.map((style) => {stylethumbs.push(style.photos[0].thumbnail_url)});
   const product = overviewData.overview;
   const thumbs = styles[curStyle].photos;
   const sizeOptions = [];
+
+  const changeStart = (dir) =>{
+    if (dir === "up" && startImg+nThumbs<nImg) {
+      setStartImg(startImg+1);
+    }
+    if(dir==="down" && startImg>0) {
+      setStartImg(startImg-1);
+    }
+  }
+
   Object.keys(styles[curStyle].skus).map((key) => {
     if (styles[curStyle].skus[key].quantity>0) {
       sizeOptions.push({'value':key, 'label': styles[curStyle].skus[key].size});
@@ -30,18 +46,46 @@ export default function Overview() {
     setSize(styles[curStyle].skus[e.value]['size']);
   }
 
+
   return(
     <section>
       <div className="container">
         <div className="overviewTop">
           <div className="thumbnailsContainer">
-            {thumbs.map(t => (<img className="thumb" src={t.thumbnail_url} alt=""/>))}
+            <div className="thumbnailsPointer">
+              {startImg+nThumbs<nImg ? <span id="upPointer" onClick={()=>changeStart("up")} class="material-symbols-outlined">keyboard_arrow_up</span> : <></>}</div>
+            <div className="thumbnailsAll">
+            {thumbs.map((t,index) => {
+              if(index>=startImg && index<startImg+nThumbs) {
+                if(index === main) {
+                  return (<img className="thumb" id="mainThumb" src={t.thumbnail_url} alt=""/>)
+                }
+                return (<img className="thumb" onClick={()=>setMain(index)} src={t.thumbnail_url} alt=""/>)
+              }}
+            )}
+            </div>
+            <div className="thumbnailsPointer">
+              {startImg>0 ? <span id="downPointer" onClick={()=>changeStart("down")} class="material-symbols-outlined">keyboard_arrow_down</span>:<></>}</div>
           </div>
           <div className="mainImgContainer">
-            <img className="mainImg" alt="" src={thumbs[0].url}/>
+            {/* <img src={thumbs[main].url} alt=""
+              className="mainImg"/> */}
+             <Zoom
+                img={thumbs[main].url}
+                key={thumbs[main].url}
+                zoomScale={3}
+                width={600}
+                height={600}
+              />
+            { main>1 ? <span class="material-symbols-outlined" id="leftArrow" onClick={()=>setMain(main-1)}>
+              arrow_back_ios
+            </span> : <></>}
+            {main<nImg-1 ? <span class="material-symbols-outlined" id="rightArrow" onClick={()=>setMain(main+1)}>
+              arrow_forward_ios
+            </span>: <></>}
           </div>
           <div className="productContainer">
-            <div className="productCat">{product.category}</div>
+            <div className="productCat"><div className="cat">{product.category}</div></div>
             <div className="productName">{product.name}</div>
             <div className="productRating">
               <StarRating rating = {rating} id="productRatingStar" starRatedColor="#D6336C" starEmptyColor ='grey'
@@ -76,6 +120,7 @@ export default function Overview() {
           </div>
         </div>
         <div className="overviewBottom">
+          <span className="pink"></span>
           <div className="overviewSlogan">{overviewData.overview.slogan}</div>
           <div className="overviewDesc">{overviewData.overview.description}</div>
 

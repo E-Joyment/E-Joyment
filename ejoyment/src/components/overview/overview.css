@@ -1,7 +1,7 @@
 .container{
   display: flex;
   flex-direction: column;
-  margin-left: 200px;
+  margin:150px auto;
 }
 .container >div{
   margin-left: 15px;
@@ -13,13 +13,34 @@
   flex-direction: row;
 }
 
+
 .thumbnailsContainer{
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
   height: 600px;
   width: 100px;
 }
+
+.thumbnailsPointer{
+  height: 64px;
+  width: 64px;
+  text-align: center;
+}
+
+#upPointer, #downPointer{
+  font-size: 60px;
+}
+
+#mainThumb{
+  border: 2px solid rgb(224, 176, 176);
+}
+
+.thumbnailsAll{
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar{
   width: 5px;
 }
@@ -30,13 +51,15 @@
   background-color: rgb(85, 85, 85);
 }
 .thumb{
-  height: 64px;
-  width: 64px;
+  height: 65px;
+  width: 65px;
+  border: 1px solid white;
   object-fit: cover;
 }
 
 .mainImgContainer{
   margin-right:  15px;
+  position: relative;
 }
 
 .mainImg{
@@ -44,7 +67,20 @@
   width: 600px;
   object-fit: cover;
 }
-
+#rightArrow{
+  color: white;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  cursor: pointer;
+}
+#leftArrow{
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  cursor: pointer;
+}
 .productContainer{
   display: flex;
   flex-direction: column;
@@ -57,7 +93,6 @@
   height: 22px;
   width: 79px;
   border-radius: 11px;
-  color: white;
   text-align: center;
   justify-items: center;
   font-style: normal;
@@ -67,23 +102,30 @@
   align-items: center;
 }
 
+.cat{
+  color: white;
+  padding-top: 3px;
+}
 .productName{
   height: 40px;
   width: 338px;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 24px;
+  line-height: 40px;
   margin-top: 20px;
 }
 
 .productRating{
   display: flex;
   flex-direction: row;
+  margin-top: 15px;
 }
 
 .productRatingNum{
   margin-left: 10px;
   font-size: 12px;
   text-decoration: underline;
+
 }
 
 .styleContainer{
@@ -91,6 +133,7 @@
   flex-direction: column;
   height: 168px;
   width: 416px;
+  margin-top: 50px;
 }
 
 
@@ -137,6 +180,7 @@
 .priceContainer{
   font-size: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .productOriginPrice{
@@ -150,10 +194,11 @@
 }
 
 .sizeContainer{
-  margin-bottom: 20px;
+  margin-top: 25px;
 }
 
 .addBagButton{
+  border-radius: 4px;
   background-color: #D6336C;
   color: white;
   height: 56px;
@@ -172,6 +217,7 @@
 .addBag{
   display: flex;
   flex-direction: row;
+  margin-top: 65px;
 }
 
 #addBagid{
@@ -209,18 +255,30 @@
   width: 1057px;
   align-self: center;
   margin-top: 60px;
+  position: relative;
 }
 
 .overviewSlogan{
+  position: absolute;
   height: 32px;
-  width: 328;
-  font-weight: bold;
+  width: 328px;
+  font-weight: 700;
   font-size: 24px;
-  font-family: "Merriwea";
+  line-height: 32px;
+  font-family: "Merriweather";
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  left: 15px;
 }
-
+.pink{
+  height: 24px;
+  width: 360px;
+  background-color: #F06595;
+  position: absolute;
+  top: 17px;
+}
 .overviewDesc{
+  position: absolute;
+  top: 30px;
   margin-top: 20px;
   height: 118px;
   width: 1057px;
