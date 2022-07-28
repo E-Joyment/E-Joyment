@@ -4,6 +4,7 @@ import {relatedData} from '../../assets/relateddata.js';
 import Cards from './Cards/Cards.js';
 import Comparison from './Cards/ComparisonModal.js';
 import Outfits from './Outfits/Outfits.js';
+import styled from 'styled-components';
 
 const RelatedProducts = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,10 +16,10 @@ const RelatedProducts = () => {
   const relatedProductsDetail = relatedData.allRelatedRequestInfo;
   const relatedProductsRatings = relatedData.allRelatedRequestRatings;
   //all related data:
-  console.log('defaultidinfo', defaultidinfo);
-  console.log('relatedProductsStyles',relatedProductsStyles);
-  console.log('relatedProductsDetail', relatedProductsDetail);
-  console.log('relatedProductsRatings', relatedProductsRatings);
+  // console.log('defaultidinfo', defaultidinfo);
+  // console.log('relatedProductsStyles',relatedProductsStyles);
+  // console.log('relatedProductsDetail', relatedProductsDetail);
+  // console.log('relatedProductsRatings', relatedProductsRatings);
 
   useEffect(() => {
     if(selectedid.features) {
@@ -27,10 +28,10 @@ const RelatedProducts = () => {
   }, [selectedid]);
 
 
-  return (
-    <section>
-      <div className="container">
-      <h3 className="relatedheader">Related Products</h3>
+  return(
+    <RelatedProductsSection>
+
+      <RelatedHeader >Related Products</RelatedHeader>
       {
         relatedProductsStyles.length > 0 && relatedProductsDetail.length > 0
         && relatedProductsRatings.length > 0 &&
@@ -42,23 +43,47 @@ const RelatedProducts = () => {
           setSelectedid={setSelectedid}
         />
       }
-      <div className = "comparisonWrapper">
-      { showModal && twoCardsArray.length > 0 &&
+    <ComparisonWrapper>
+    { showModal && twoCardsArray.length > 0 &&
       <Comparison
         twoCards={twoCardsArray}
         close={ setShowModal}
       /> }
-      </div>
-      <h3 className="relatedheader">
-        Your WishList
-      </h3>
-      {/* <Outfits /> */}
-     </div>
-    </section>
+    </ComparisonWrapper>
+
+    <RelatedHeader>Your Outfit</RelatedHeader>
+    <Outfits />
+
+    </ RelatedProductsSection>
   )
 
 
-
 }
+
+const RelatedHeader = styled.h3`
+  text-transform: uppercase;
+  padding-left: 10px;
+  padding-bottom: 10px;
+`;
+
+const RelatedProductsSection = styled.section`
+  display: inline-block;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+`;
+
+
+const ComparisonWrapper = styled.div`
+  position: fixed;
+  width: 300px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backgroundColor: #FFF;
+  padding: 50px;
+  zIndex: 1000;
+`
+
 
 export default RelatedProducts;
