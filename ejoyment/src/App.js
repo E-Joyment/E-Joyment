@@ -9,7 +9,8 @@ function App() {
       <Nav/>
       <Overview/>
       <RelatedProducts />
-      <Footer/>);
+      <Footer/>
+    </section>);
 
 }
 
