@@ -8,10 +8,10 @@ import { useState, createContext, useEffect} from "react";
 export const PropIdContext = createContext();
 
 function App() {
-  const [id, setId] = useState('40348');
-  const [allRatings, setAllRatings] = useState(0);
-  const [curPhoto, setCurPhoto] = useState('');
-  const [styleIndx, setStyleIndx] = useState(0);
+  // const [id, setId] = useState('40348');
+  // const [allRatings, setAllRatings] = useState(0);
+  // const [curPhoto, setCurPhoto] = useState('');
+  // const [styleIndx, setStyleIndx] = useState(0);
   return (
     <section>
       <Nav/>

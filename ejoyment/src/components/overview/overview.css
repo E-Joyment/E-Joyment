@@ -17,6 +17,7 @@
 .thumbnailsContainer{
   height: 600px;
   width: 100px;
+  margin-right: 20px;
 }
 
 .thumbnailsPointer{
@@ -83,6 +84,7 @@
 }
 .productContainer{
   display: flex;
+  margin-left: 80px;
   flex-direction: column;
   position:relative;
 }

@@ -71,6 +71,7 @@ const RelatedProductsSection = styled.section`
   left: 50%;
   position: relative;
   transform: translateX(-50%);
+  margin:0 auto;
 `;
 
 
